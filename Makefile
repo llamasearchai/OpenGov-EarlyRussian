@@ -1,7 +1,7 @@
 # Makefile for OpenGov-EarlyRussian
 # Author: Nik Jois <nikjois@llamasearch.ai>
 
-.PHONY: help install test test-cov lint format type clean run demo docker-build docker-run all
+.PHONY: help install test test-cov lint format type clean run demo docker-build docker-run all dist release
 
 help:
 	@echo "OpenGov-EarlyRussian - Available Commands"
@@ -75,3 +75,13 @@ docker-run:
 all: format lint type test
 	@echo "All checks passed!"
 
+dist:
+	@echo "Building source and wheel distributions..."
+	python3 -m pip install --upgrade build || true
+	python3 -m build
+	@echo "Distributions available in dist/"
+
+release: dist
+	@echo "Tagging and preparing release..."
+	@echo "Use GitHub Actions Release workflow to publish on tag push (v*)."
+	@echo "Example: git tag -a v0.1.0 -m 'Release 0.1.0' && git push origin v0.1.0"

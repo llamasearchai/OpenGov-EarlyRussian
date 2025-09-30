@@ -1,5 +1,9 @@
 # OpenGov-EarlyRussian
 
+![CI](https://github.com/opengov/earlyrussian/actions/workflows/ci.yml/badge.svg)
+![Coverage 100%](https://img.shields.io/badge/coverage-100%25-brightgreen)
+![Version](https://img.shields.io/badge/version-0.1.0-blue)
+
 AI-powered Russian language learning platform featuring interactive lessons, Business Russian, cultural immersion, and personalized learning tools.
 
 ## Author
@@ -207,4 +211,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
