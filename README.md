@@ -1,6 +1,6 @@
 # OpenGov-EarlyRussian
 
-![CI](https://github.com/opengov/earlyrussian/actions/workflows/ci.yml/badge.svg)
+![CI](https://github.com/llamasearchai/OpenGov-EarlyRussian/actions/workflows/ci.yml/badge.svg)
 ![Coverage 100%](https://img.shields.io/badge/coverage-100%25-brightgreen)
 ![Version](https://img.shields.io/badge/version-0.1.0-blue)
 

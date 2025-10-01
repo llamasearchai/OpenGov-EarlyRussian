@@ -57,5 +57,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Author
 - Nik Jois <nikjois@llamasearch.ai>
 
-[0.1.0]: https://github.com/opengov/earlyrussian/releases/tag/v0.1.0
-
+[0.1.0]: https://github.com/llamasearchai/OpenGov-EarlyRussian/releases/tag/v0.1.0

@@ -66,9 +66,9 @@ dev = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/opengov/earlyrussian"
-Documentation = "https://docs.opengovru.edu"
-Repository = "https://github.com/opengov/earlyrussian"
+Homepage = "https://github.com/llamasearchai/OpenGov-EarlyRussian"
+Documentation = "https://github.com/llamasearchai/OpenGov-EarlyRussian#readme"
+Repository = "https://github.com/llamasearchai/OpenGov-EarlyRussian"
 
 [project.scripts]
 russian = "opengov_earlyrussian.cli:app"
@@ -119,4 +119,3 @@ markers = [
     "performance: performance tests",
 ]
 asyncio_mode = "auto"
-
