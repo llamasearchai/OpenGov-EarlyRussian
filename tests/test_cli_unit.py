@@ -66,8 +66,30 @@ def test_cli_module_main_invocation(monkeypatch) -> None:  # type: ignore[no-unt
     assert result.exit_code == 0
     # Ensure CLI sees a clean argv without pytest/coverage flags
     monkeypatch.setattr("sys.argv", ["russian"])  # type: ignore[arg-type]
+    # With no_args_is_help=True, it should print help; Click exits with code 2
     try:
         runpy.run_module("opengov_earlyrussian.cli", run_name="__main__")
     except SystemExit as exc:
-        # Typer exits with code 2 when no command is provided; accept that
         assert exc.code in (0, 2)
+
+
+def test_cli_alphabet_invalid_row_unit() -> None:
+    result = runner.invoke(app, ["alphabet", "notarow"]) 
+    assert result.exit_code == 1
+    assert "Unknown row" in result.stdout
+
+
+def test_cli_decline_masc_animate_unit() -> None:
+    # Masculine animate accusative equals genitive form
+    result = runner.invoke(app, ["decline", "студент", "masculine", "--animate"]) 
+    assert result.exit_code == 0
+    out = result.stdout
+    assert "студента" in out
+    assert "винительный" in out
+
+
+def test_cli_conjugate_it_unit() -> None:
+    result = runner.invoke(app, ["conjugate", "говорить", "--tense", "present"]) 
+    assert result.exit_code == 0
+    # Expect present 1sg form for -ить pattern
+    assert "говорю" in result.stdout

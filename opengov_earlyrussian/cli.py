@@ -7,7 +7,7 @@ from opengov_earlyrussian.core.cases import CasesTeacher
 from opengov_earlyrussian.core.verbs import VerbConjugator
 from opengov_earlyrussian.core.transliteration import Transliterator
 
-app = typer.Typer(help="OpenGov-EarlyRussian CLI")
+app = typer.Typer(help="OpenGov-EarlyRussian CLI", no_args_is_help=True)
 console = Console()
 
 
@@ -15,7 +15,11 @@ console = Console()
 def alphabet(row: str = typer.Argument("iotated")) -> None:
     """Display Russian alphabet rows."""
     teacher = AlphabetTeacher()
-    result = teacher.get_row(row)
+    try:
+        result = teacher.get_row(row)
+    except ValueError as exc:
+        console.print(f"[bold red]Error:[/bold red] {exc}")
+        raise typer.Exit(code=1)
     console.print(json.dumps(result, ensure_ascii=False, indent=2))
 
 
